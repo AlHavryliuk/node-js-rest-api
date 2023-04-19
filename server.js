@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
 import app from "./app.js";
-import { DB_HOST } from "./configuration/config.js";
 
-const HOST = DB_HOST ?? process.env.DB_HOST;
+const HOST = process.env.DB_HOST;
 
 mongoose
   .connect(HOST)
