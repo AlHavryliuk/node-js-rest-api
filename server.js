@@ -1,8 +1,9 @@
+import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 import mongoose from "mongoose";
 import app from "./app.js";
-import { DB_HOST } from "./configuration/config.js";
 
-const HOST = DB_HOST ?? process.env.DB_HOST;
+dotenv.config();
+const HOST = process.env.DB_HOST;
 
 mongoose
   .connect(HOST)
