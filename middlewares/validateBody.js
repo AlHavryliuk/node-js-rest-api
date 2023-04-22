@@ -1,6 +1,6 @@
 import HttpError from "../helpers/httpError.js";
 
-const contactValidates = (schema) => {
+const validateBody = (schema) => {
   const func = (req, res, next) => {
     const { error } = schema.validate(req.body);
     if (error) {
@@ -11,4 +11,4 @@ const contactValidates = (schema) => {
   return func;
 };
 
-export default contactValidates;
+export default validateBody;
